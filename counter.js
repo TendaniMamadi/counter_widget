@@ -2,29 +2,60 @@ var counter_widget = document.querySelector(".counter-widget")
 var additionBtn = document.querySelector(".counter1")
 var subtractingBtn = document.querySelector(".counter2")
 var resetBtn = document.querySelector(".refresh")
+var multiplicationBtn = document.querySelector(".multiply")
+var textboxElement = document.querySelector(".textbox")
 var count = document.querySelector(".number")
 
 
 
+
+
+
+function subtractCount() {
+
+    if (addition > 0) {
+        count.innerHTML = --addition
+    }
+
+
+}
+
+subtractingBtn.addEventListener('click', subtractCount)
+
 let addition = 0;
 
 function widgetCounter() {
-    // let subtraction = 0;
+
 
     count.innerHTML = ++addition
-    // counter2.innerHTML = btn2
-    // refresh. innerHTML = btn3
 
-    // alert(addition++)
-    
+
 }
+
 additionBtn.addEventListener('click', widgetCounter)
 
+let reset = 0;
 
-let subtraction = 0;
-function subtractCount(){
+function resetCount() {
 
-    count.innerHTML = --subtraction
-    
+
+    count.innerHTML = 0;
+    location.reload()
+
+
+
 }
-subtractingBtn.addEventListener('click',subtractCount)
+
+resetBtn.addEventListener('click', resetCount)
+
+
+
+function multiplicationCount() {
+    let times = textboxElement.value
+
+    count.innerHTML = addition * times
+
+}
+console.log(addition);
+multiplicationBtn.addEventListener('click', multiplicationCount)
+
